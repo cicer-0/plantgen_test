@@ -14,11 +14,11 @@ class Caretaker_Animal extends Model
 
     public function caretaker()
     {
-        return $this->belongsTo('App\Models\Caretaker');
+        return $this->belongsTo(Caretaker::class, 'caretaker_id');
     }
 
     public function animal()
     {
-        return $this->belongsTo('App\Models\Animal');
+        return $this->belongsTo(Animal::class, 'animal_id');
     }
 }

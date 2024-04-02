@@ -15,6 +15,6 @@ class Enclosure extends Model
 
     public function animals()
     {
-        return $this->hasMany('App\Models\Animal');
+        return $this->hasMany(Animal::class ,'enclosure_id');
     }
 }

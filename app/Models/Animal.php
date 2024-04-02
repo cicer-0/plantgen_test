@@ -20,21 +20,21 @@ class Animal extends Model
 
     public function species()
     {
-        return $this->belongsTo('App\Models\Species');
+        return $this->belongsTo(Species::class, 'species_id');
     }
 
     public function enclosure()
     {
-        return $this->belongsTo('App\Models\Enclosure');
+        return $this->belongsTo(Enclosure::class, 'enclosure_id');
     }
 
     public function caretaker_animals()
     {
-        return $this->hasMany('App\Models\Caretaker_Animal');
+        return $this->hasMany(Caretaker_Animal::class, 'animal_id');
     }
 
     public function activity()
     {
-        return $this->belongsTo('App\Models\Activity');
+        return $this->belongsTo(Activity::class, 'activity_id');
     }
 }

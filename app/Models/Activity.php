@@ -16,6 +16,6 @@ class Activity extends Model
 
     public function animals()
     {
-        return $this->hasMany('App\Models\Animal');
+        return $this->hasMany(Animal::class,'activity_id');
     }
 }

@@ -16,6 +16,6 @@ class Caretaker extends Model
 
     public function caretaker_animals()
     {
-        return $this->hasMany('App\Models\Caretaker_Animal');
+        return $this->hasMany(Caretaker_Animal::class,'caretaker_id');
     }
 }
