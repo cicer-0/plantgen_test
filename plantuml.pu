@@ -1,0 +1,74 @@
+@startuml
+
+class models.Animal{
+    name:string
+    species_id:integer
+    enclosure_id:integer
+    activity_id:integer
+    date_of_birth:Date
+    gender:string
+    weight:float
+    health_status:string
+}
+class models.Species{
+    name:string
+    scientific_name:string
+    habitat:string
+    diet:string
+}
+class models.Enclosure{
+    capacity:integer
+    location:string
+    type:string
+}
+class models.Caretaker{
+    name:string
+    specialty:string
+    years_of_experience:integer
+    contact_number:string
+}
+class models.Caretaker_Animal{
+    caretaker_id:integer
+    animal_id:integer
+}
+class models.Activity{
+    day:string
+    time:string
+    duration:integer
+    description:string
+}
+
+
+class controllers.Animal{
+    resource()
+
+}
+class controllers.Species{
+    resource()
+}
+
+class controllers.Enclosure{
+    resource()
+}
+
+class controllers.Caretaker{
+    resource()
+
+}
+class controllers.Caretaker_Animal{
+    resource()
+
+}
+class controllers.Activity{
+    resource()
+
+}
+
+models.Species "1"*--"*" models.Animal
+models.Enclosure "1"*--"*" models.Animal
+models.Caretaker "1"*--"*" models.Caretaker_Animal
+models.Animal "1"*--"*" models.Caretaker_Animal
+models.Activity "1"*--"*" models.Animal
+
+
+@enduml
